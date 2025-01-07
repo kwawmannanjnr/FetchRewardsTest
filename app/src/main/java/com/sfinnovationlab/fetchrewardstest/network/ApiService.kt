@@ -11,7 +11,6 @@ import retrofit2.converter.gson.GsonConverterFactory
 interface ApiService {
     @GET("hiring.json")
     suspend fun fetchItems(): List<Item>
-
     private fun createApiService(): ApiService {
         val client = OkHttpClient.Builder().build()
         return Retrofit.Builder()
@@ -21,5 +20,4 @@ interface ApiService {
             .build()
             .create(ApiService::class.java)
     }
-
 }
